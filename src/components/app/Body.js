@@ -6,7 +6,7 @@ const Body = () => {
   return (
     <Wrapper>
       {TITLE.map(title => (
-        <IssueContainer title={title} />
+        <IssueContainer key={title.id} title={title} />
       ))}
     </Wrapper>
   );

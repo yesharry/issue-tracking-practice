@@ -1,9 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import ContentText from './container/ContentText';
-import Deadline from './container/Deadline';
-import ManagePerson from './container/ManagePerson';
-import State from './container/State';
 
 const ModalContainer = ({ setModalOpen }) => {
   const closeModal = () => {
@@ -13,23 +9,38 @@ const ModalContainer = ({ setModalOpen }) => {
   return (
     <ContainerWrapper>
       <ContainerHeader>
-        <ModalTitleInput type="text" />
         <CloseBtn onClick={closeModal}>X</CloseBtn>
       </ContainerHeader>
       <ContainerBody>
-        <State />
-        <Deadline />
-        <ManagePerson />
-        <ContentText />
-        <SubmitBtn>저장</SubmitBtn>
+        <InputWrapper>
+          제목
+          <InputModal type="text" />
+        </InputWrapper>
+        <InputWrapper>
+          상태
+          <InputModal type="text" />
+        </InputWrapper>
+        <InputWrapper>
+          마감일
+          <InputModal type="datetime-local" />
+        </InputWrapper>
+        <InputWrapper>
+          담당자
+          <InputModal type="text" />
+        </InputWrapper>
+        내용
+        <ContentInput />
       </ContainerBody>
+      <ContainerFooter>
+        <SubmitBtn>저장</SubmitBtn>
+      </ContainerFooter>
     </ContainerWrapper>
   );
 };
 
 const ContainerWrapper = styled.div`
-  width: 800px;
-  height: 740px;
+  width: 600px;
+  height: 540px;
   background-color: white;
   border-radius: 10px;
 `;
@@ -40,15 +51,8 @@ const ContainerHeader = styled.div`
   margin-left: 20px;
   margin-right: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
-`;
-
-const ModalTitleInput = styled.input`
-  width: 90%;
-  height: 40px;
-  font-size: 30px;
-  outline: none;
 `;
 
 const CloseBtn = styled.button`
@@ -66,6 +70,35 @@ const ContainerBody = styled.div`
   margin-right: 20px;
   display: flex;
   flex-direction: column;
+`;
+
+const InputWrapper = styled.div`
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const InputModal = styled.input`
+  width: 80%;
+  height: 25px;
+  outline: none;
+`;
+
+const ContentInput = styled.textarea`
+  height: 180px;
+  margin-top: 10px;
+  outline: noen;
+  resize: none;
+`;
+
+const ContainerFooter = styled.div`
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: end;
 `;
 
 const SubmitBtn = styled.button`

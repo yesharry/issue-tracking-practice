@@ -1,0 +1,12 @@
+{
+  "issues": [
+    {
+      "id": 1,
+      "title": "2주차 과제",
+      "content": "과제 기능 구현 중 어려워 미쳐버리겠음",
+      "deadline": "2022-01-05",
+      "status": "To-Do",
+      "manager": "노해리"
+    }
+  ]
+}

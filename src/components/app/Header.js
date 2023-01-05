@@ -11,7 +11,7 @@ const Header = () => {
 
   return (
     <HeaderWrapper>
-      <h1>Issue Tracker</h1>
+      <h1>Issue Tracking</h1>
       <CreateBtn onClick={showModal}>등록</CreateBtn>
       {modalOpen && <Modal setModalOpen={setModalOpen} />}
     </HeaderWrapper>
